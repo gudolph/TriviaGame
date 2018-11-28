@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gandalf The Grey Objects</title>
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+    var lordoftheringspeople = []
+    //"property", colon, then "value" so gandalf can be described with more info.  Let's you take information and break it into a schematic.  {}is for assigning objects.
+    var gandalf = {
+      "real name": "Gandalf",
+      "age (est)": 11000,
+      "race": "Maia",
+      "haveRetirementPlan": true,
+      "aliases": [
+        "Greyhame",
+        "Stormcrow",
+        "Mithrandir",
+        "Gandalf the Grey",
+        "Gandalf the White"
+      ]
+    };
+var kings = {
+  camelot: "arthur",
+  knights:"robin the brave"
+
+}
+    // Object properties can be accessed with "bracket notation" and must be if there is a space in the property.
+    alert("My name is " + gandalf["real name"]);
+
+    // Or with "dot notation" if the property has no spaces
+    if (gandalf.haveRetirementPlan) {
+
+      // Or with a variable that matches the name of the property
+      var ageProperty = "age (est)";
+      var years = gandalf[ageProperty];
+      alert("My 401k has been gathering interest for " + years + " years!");
+    }
+
+    // You can access arrays and their properties from an object
+    alert("I have more than " + gandalf.aliases.length + " aliases");
+
+    //how do you dip into a grab "Greyhame" in console log?
+    console.log(gandalf.aliases[0]);
+
+    // Non-existent properties return undefined
+    alert("My designation is " + gandalf["designation"]);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+body {
+    background: #dddddd;
+    color: #777777;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: whitesmoke;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+h1 {
+    background-color: #4aaaa5;
+    color: white;
+    font-size: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 12px 20px 12px 20px;
+    margin-top: 0;
+    margin-left:21.6%;
+    float: left;
+    position: relative;
+    top: 0;
+    z-index: 3;
+}
+
+.site-links {
+    word-spacing: 30px;
+    font-size: 20px;    
+    text-align: right;
+    color: grey;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 16px 0px 16px 0;
+    margin-top: 0;
+    margin-left: -8px;
+    position: relative;
+    width: 100%;
+    top: 0;
+    right: 29.8%;
+    z-index: 2;
+}
+
+h2 {
+    color: #4aaaa5;
+    font-size: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 50px 20px 0px 20px;
+    width: 76%;
+}
+
+.container {
+    background-color: #f2f2f2;
+    padding: 14px;
+    width: 46%;
+    height: auto;
+    margin-left: 21.6%;
+    align-items: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+input[type=submit]:hover {
+    background-color: #4aaaa5;
+}
+
+div {
+    /* background-color: #4aaaa5; */
+    color: #f2f2f2;
+}
+
+.pic {
+    width: 200px;
+    height: auto;
+    position: relative;
+    margin: 1rem;
+    border: 1px solid #777777; 
+}
+
+div.class:hover {
+    border: 1px solid #777;
+}
+
+div.desc {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+    height: auto;
+    text-align: center;
+    background-color: #4aaaa5
+}
+
+a:link {
+    color: gray;
+    text-decoration: none;
+}
+
+a:visited {
+    color: gray;
+    text-decoration: none;
+}

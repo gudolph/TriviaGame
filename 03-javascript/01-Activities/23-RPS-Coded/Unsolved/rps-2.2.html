@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Part 2
+  </title>
+</head>
+
+<body>
+
+  <div id="game">
+
+  </div>
+
+  <script type="text/javascript">
+
+    // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+    var computerChoices = ["r", "p", "s"];
+
+    alert("Press 'r' for rock, 'p' for paper, or 's' scissors!");
+    // This function is run whenever the user presses a key.
+    document.onkeyup = function (event) {
+
+      // Determines which key was pressed and establishes displayed choice.
+      var userGuess = event.key;
+      if (userGuess == "r") {
+        var displayGuess = "Rock"
+      }
+      if (userGuess == "s") {
+        var displayGuess = "Scissors"
+      }
+      if (userGuess == "p") {
+        var displayGuess = "Paper"
+      }
+
+      // Randomly chooses a choice from the options array. This is the Computer's guess. This also establishes displayed choice.
+      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+      if (computerGuess == "r") {
+        var compGuess = "Rock"
+      }
+      if (computerGuess == "s") {
+        var compGuess = "Scissors"
+      }
+      if (computerGuess == "p") {
+        var compGuess = "Paper"
+      }
+      // Alerts the key the user pressed (userGuess).
+      alert("You played: " + displayGuess);
+
+      // Alerts the Computer's guess.
+      alert("The computer plays: " + compGuess);
+      if (computerGuess === userGuess) {
+        alert("Draw! \You both lose!")
+      }
+      if (computerGuess == "s" && userGuess == "r") {
+        alert("Your mighty rock CRUSHED the scissors. \nYou win!")
+      }
+      if (computerGuess == "r" && userGuess == "p") {
+        alert("Your cunning paper WRAPPED the rock. \nYou win!")
+      }
+      if (computerGuess == "p" && userGuess == "s") {
+        alert("Your sharp scissors SLICE THROUGH the paper. \nYou win!")
+      }
+      if (computerGuess == "r" && userGuess == "s") {
+        alert("Your weak scissors are CRUMPLED by the rock! \nYou lose!")
+      }
+      if (computerGuess == "s" && userGuess == "p") {
+        alert("Your paper is SLICED by the scissors, obviously! \nYou lose!")
+      }
+      if (computerGuess == "p" && userGuess == "r") {
+        alert("Your ignorant rock is ENROBED by the superior paper! \nYou lose!")
+      }
+      alert("Play again!")
+    };
+  </script>
+
+</body>
+
+</html>
