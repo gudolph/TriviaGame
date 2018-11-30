@@ -75,10 +75,15 @@ var timer = {
             intervalId = setInterval(timer.count, 1000);
             clockRunning = true;
         }
+
     },
     count: function () {
         timer.time--;
+        if (timer.time === 0) {
+            clearInterval(intervalId);
+        }
         var displayTime = timer.countdown(timer.time);
+        console.log(timer.time)
         $("#timer").text(displayTime);
     },
     countdown: function (t) {
