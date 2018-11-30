@@ -35,14 +35,16 @@ var correct = 0;
 var answers = ["Rhaegon", "Mockingbird", "Varys", "5", "Joffrey Baratheon", "Flower", "1", "Polliver", "The Valonquar", "Aegon"]
 var quiz = {
     start: function () {
-        $("#question").text(questions[0]);
-        console.log(guesses[0]);
+        var j = 0;
+        $("#question").text(questions[j]);
+        console.log(guesses[j]);
         for (i = 0; i < 4; i++) {
-            var guess = (guesses[0][i]);
+            var guess = (guesses[j][i]);
+            console.log(guess)
             $("#guesses").append("<button>" + guess);
-
         }
-        $("button").on("click", function() {
+
+        $("button").on("click", function () {
             var value = answers.indexOf($(this).html());
             console.log($(this).html());
             console.log(value);
@@ -55,9 +57,12 @@ var quiz = {
             $("#question").empty();
             $("#guesses").empty();
             console.log(correct)
-
+            j++;
+            $("#start").click(quiz.start);
         })
+
     }
+
 }
 var timer = {
     time: 90,
