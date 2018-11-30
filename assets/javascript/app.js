@@ -32,10 +32,11 @@ var guesses = [
 ]
 
 var correct = 0;
+var j = 0;
 var answers = ["Rhaegon", "Mockingbird", "Varys", "5", "Joffrey Baratheon", "Flower", "1", "Polliver", "The Valonquar", "Aegon"]
 var quiz = {
     start: function () {
-        var j = 0;
+
         $("#question").text(questions[j]);
         console.log(guesses[j]);
         for (i = 0; i < 4; i++) {
@@ -56,14 +57,16 @@ var quiz = {
             }
             $("#question").empty();
             $("#guesses").empty();
-            console.log(correct)
             j++;
-            $("#start").click(quiz.start);
+            $("#question").text(questions[j]);
+            console.log(j);
+            console.log(correct);
+            $("button").click(quiz.start(j))
         })
-
     }
-
 }
+
+
 var timer = {
     time: 90,
 
