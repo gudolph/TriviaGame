@@ -47,12 +47,15 @@ var quiz = {
             console.log($(this).html());
             console.log(value);
             if (value === -1) {
-                correct++;
-            }
-            if (value != -1) {
                 correct = correct;
             }
+            if (value != -1) {
+                correct++;
+            }
+            $("#question").empty();
+            $("#guesses").empty();
             console.log(correct)
+
         })
     }
 }
