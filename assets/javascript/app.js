@@ -38,15 +38,17 @@ var quiz = {
         $("#question").text(questions[0]);
         console.log(guesses[0]);
         for (i = 0; i < 4; i++) {
-            $("#guesses").append("<li>" + guesses[0][i]);
             var guess = (guesses[0][i]);
+            $("#guesses").append("<button>" + guess);
+
         }
-        $.guess.click(function() {
-            var value = answers.inArray(guess)
+        $("button").click(function() {
+            var value = answers.indexOf(this)
             console.log(value);
             if (value == -1) {
                 correct++;
             }
+            console.log(correct)
         })
     }
 }
