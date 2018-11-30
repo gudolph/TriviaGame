@@ -42,11 +42,15 @@ var quiz = {
             $("#guesses").append("<button>" + guess);
 
         }
-        $("button").click(function() {
-            var value = answers.indexOf(this)
+        $("button").on("click", function() {
+            var value = answers.indexOf($(this).html());
+            console.log($(this).html());
             console.log(value);
-            if (value == -1) {
+            if (value === -1) {
                 correct++;
+            }
+            if (value != -1) {
+                correct = correct;
             }
             console.log(correct)
         })
