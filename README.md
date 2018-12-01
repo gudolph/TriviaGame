@@ -1,5 +1,4 @@
-#ASOIAF Trivia Game
-
+# ASOIAF Trivia Game
 ### A simple trivia game with questions regarding the book series "A Song of Ice and Fire"
 ------
 ## How to Play
