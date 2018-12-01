@@ -50,30 +50,50 @@ hr {
     padding: 0px 10px 0px 10px;
     margin-bottom: 0px;
 }
+#start {
+    text-align: center;
+}
+#replay {
+    float: left;
+    font-size: 14px;
+    line-height: 1em;
+    padding: 0px 10px 0px 10px;
+    margin-bottom: 0px;
+}
 
 #display {
 
-    width: 45%;
-    margin-left: 50%;
+    width: 66.6%;
+    margin-left: 16.50%;
 
 }
 
+#warning {
+
+    font-family: "Alegreya SC";
+    font-size: 30px;
+    background-color: rgba(184, 94, 71, 0.945);
+    width: 33.3%;
+    text-align: center;
+    margin: 0 auto;
+}
+
 #timer {
-    float: left;
+    float: right;
     font-family: "Alegreya SC";
     font-size: 30px;
     background-color: rgba(167, 184, 71, 0.945);
-    width: 40%;
+    width: 33.3%;
     text-align: center;
     margin: 0 auto;
 }
 
 #total {
-    float: center;
+    float: left;
     font-family: "Alegreya SC";
     font-size: 30px;
-    background-color: rgba(165, 71, 184, 0.5);
-    width: 40%;
+    background-color: rgba(165, 71, 184, 0.9);
+    width: 33.3%;
     text-align: center;
     margin: 0 auto;
 }

@@ -1,10 +1,23 @@
 window.onload = function () {
     $("#start").click(timer.start).click(quiz.start);
+    $("#replay").hide();
 };
 var intervalId;
 
 var clockRunning = false;
 
+var martins = [
+    "assets/images/SadMartin.jpg",
+    "assets/images/SadMartin2.jpg",
+    "assets/images/SadMartin3.jpg",
+    "assets/images/SadMartin4.jpg",
+    "assets/images/SadMartin5.jpg",
+    "assets/images/SadMartin6.jpg",
+    "assets/images/SadMartin7.jpg",
+    "assets/images/SadMartin8.jpg",
+    "assets/images/SadMartin9.jpg",
+    "assets/images/SadMartin10.jpg",
+]
 var questions = [
     "Which one of these is NOT one of Daenerys' dragons?",
     "What is Littlefinger's sigil?",
@@ -36,7 +49,10 @@ var j = 0;
 var answers = ["Rhaegon", "Mockingbird", "Varys", "5", "Joffrey Baratheon", "Flower", "1", "Polliver", "The Valonquar", "Aegon"]
 var quiz = {
     start: function () {
-
+        $("#container").html("<h2>Question " + (j + 1));
+        $("#martin").attr("src",martins[j])
+        $("p").html("");
+        $("#start").hide();
         $("#question").text(questions[j]);
         $("#total").text("Score: " + correct + "/10");
         if (timer.time < 31) {
@@ -61,6 +77,7 @@ var quiz = {
             }
             j++;
             if (j < 9) {
+                $("#container").html("<h2>Question " + (j + 1));
                 $("#question").empty();
                 $("#guesses").empty();
                 $("#question").text(questions[j]);
@@ -73,12 +90,17 @@ var quiz = {
                 $("#question").text(questions[j]);
                 $("button").click(quiz.start(j))
                 $("button").click(timer.stop);
-                
+
             }
             if (j === 10) {
                 $("#question").empty();
                 $("#guesses").empty();
-                $("#introduction").empty().html("<h2>Well done! You got " + correct + " of 10 questions right!" + "<p>He'll finish the series after all!");
+                $("#container").empty().html("<h2>Well done! You got " + correct + " of 10 questions right!")
+                $("#info").text("He'll finish the series after all!");
+                $("#martin").attr("src", "assets/images/JoffClap.gif");
+                $("#replay").show().click(function() {
+                    location.reload();
+                });
             }
         })
 
@@ -87,27 +109,35 @@ var quiz = {
 
 
 var timer = {
-    time: 33,
-    
+    time: 45,
+
 
     start: function () {
         if (!clockRunning) {
             intervalId = setInterval(timer.count, 1000);
             clockRunning = true;
         }
-
     },
     count: function () {
         timer.time--;
         if (timer.time === 0) {
             clearInterval(intervalId);
+            $("#question").empty();
+            $("#guesses").empty();
+            $("#container").html("<h2>You missed the deadline!");
+            $("#info").html("<p>Good luck telling the fans!");
+            $("#replay").show().click(function() {
+                location.reload();
+            });
+            $("#martin").attr("src", "assets/images/JonSad.gif")
         }
         var displayTime = timer.countdown(timer.time);
-        $("#timer").text(displayTime);
+        $("#timer").text("Time left: " + displayTime);
+
     },
     stop: function () {
         timer.time === 0,
-        clearInterval(intervalId);
+            clearInterval(intervalId);
         var displayTime = timer.countdown(0);
         console.log(timer.time);
         $("#timer").text("Time left: " + displayTime);
