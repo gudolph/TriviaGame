@@ -55,10 +55,9 @@ var quiz = {
         $("#start").hide();
         $("#question").text(questions[j]);
         $("#total").text("Score: " + correct + "/10");
-        if (timer.time < 31) {
-            $("#warning").text("30 seconds left!");
-        }
+        
         console.log(guesses[j]);
+        console.log(timer.time);
         for (i = 0; i < 4; i++) {
             var guess = (guesses[j][i]);
             console.log(guess)
@@ -131,8 +130,12 @@ var timer = {
             });
             $("#martin").attr("src", "assets/images/JonSad.gif")
         }
+        if (timer.time < 31) {
+            $("#warning").text("30 seconds left!");
+        }
         var displayTime = timer.countdown(timer.time);
         $("#timer").text("Time left: " + displayTime);
+        
 
     },
     stop: function () {

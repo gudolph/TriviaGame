@@ -40,6 +40,7 @@ hr {
 #martin {
     width: 40%;
     height: auto;
+    text-align: right;
 }
 
 #info {
@@ -53,12 +54,16 @@ hr {
 #start {
     text-align: center;
 }
-#replay {
+#info2 {
     float: left;
+    width: 50%;
     font-size: 14px;
     line-height: 1em;
     padding: 0px 10px 0px 10px;
     margin-bottom: 0px;
+}
+#replay {
+    float: left;
 }
 
 #display {
@@ -69,7 +74,6 @@ hr {
 }
 
 #warning {
-
     font-family: "Alegreya SC";
     font-size: 30px;
     background-color: rgba(184, 94, 71, 0.945);
