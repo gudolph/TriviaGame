@@ -50,12 +50,12 @@ var answers = ["Rhaegon", "Mockingbird", "Varys", "5", "Joffrey Baratheon", "Flo
 var quiz = {
     start: function () {
         $("#container").html("<h2>Question " + (j + 1));
-        $("#martin").attr("src",martins[j])
+        $("#martin").attr("src", martins[j])
         $("p").html("");
         $("#start").hide();
         $("#question").text(questions[j]);
         $("#total").text("Score: " + correct + "/10");
-        
+
         console.log(guesses[j]);
         console.log(timer.time);
         for (i = 0; i < 4; i++) {
@@ -91,13 +91,25 @@ var quiz = {
                 $("button").click(timer.stop);
 
             }
-            if (j === 10) {
+            if (j === 10 && correct > 7) {
                 $("#question").empty();
                 $("#guesses").empty();
                 $("#container").empty().html("<h2>Well done! You got " + correct + " of 10 questions right!")
                 $("#info").text("He'll finish the series after all!");
                 $("#martin").attr("src", "assets/images/JoffClap.gif");
-                $("#replay").show().click(function() {
+                $("#total").text("Score: " + correct + "/10");
+                $("#replay").show().click(function () {
+                    location.reload();
+                });
+            }
+            if (j === 10 && correct <= 7) {
+                $("#question").empty();
+                $("#guesses").empty();
+                $("#container").empty().html("<h2>Seven Hells! You only got " + correct + " of 10 questions right!")
+                $("#info").text("The fans will not be happy!");
+                $("#martin").attr("src", "assets/images/JonSad.gif");
+                $("#total").text("Score: " + correct + "/10");
+                $("#replay").show().click(function () {
                     location.reload();
                 });
             }
@@ -125,7 +137,7 @@ var timer = {
             $("#guesses").empty();
             $("#container").html("<h2>You missed the deadline!");
             $("#info").html("<p>Good luck telling the fans!");
-            $("#replay").show().click(function() {
+            $("#replay").show().click(function () {
                 location.reload();
             });
             $("#martin").attr("src", "assets/images/JonSad.gif")
@@ -135,7 +147,7 @@ var timer = {
         }
         var displayTime = timer.countdown(timer.time);
         $("#timer").text("Time left: " + displayTime);
-        
+
 
     },
     stop: function () {
