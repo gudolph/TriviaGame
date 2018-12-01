@@ -38,6 +38,10 @@ var quiz = {
     start: function () {
 
         $("#question").text(questions[j]);
+        $("#total").text("Score: " + correct + "/10");
+        if (timer.time < 31) {
+            $("#warning").text("30 seconds left!");
+        }
         console.log(guesses[j]);
         for (i = 0; i < 4; i++) {
             var guess = (guesses[j][i]);
@@ -55,20 +59,36 @@ var quiz = {
             if (value != -1) {
                 correct++;
             }
-            $("#question").empty();
-            $("#guesses").empty();
             j++;
-            $("#question").text(questions[j]);
-            console.log(j);
-            console.log(correct);
-            $("button").click(quiz.start(j))
+            if (j < 9) {
+                $("#question").empty();
+                $("#guesses").empty();
+                $("#question").text(questions[j]);
+                $("button").click(quiz.start(j))
+
+            }
+            if (j === 9) {
+                $("#question").empty();
+                $("#guesses").empty();
+                $("#question").text(questions[j]);
+                $("button").click(quiz.start(j))
+                $("button").click(timer.stop);
+                
+            }
+            if (j === 10) {
+                $("#question").empty();
+                $("#guesses").empty();
+                $("#introduction").empty().html("<h2>Well done! You got " + correct + " of 10 questions right!" + "<p>He'll finish the series after all!");
+            }
         })
+
     }
 }
 
 
 var timer = {
-    time: 90,
+    time: 33,
+    
 
     start: function () {
         if (!clockRunning) {
@@ -83,8 +103,14 @@ var timer = {
             clearInterval(intervalId);
         }
         var displayTime = timer.countdown(timer.time);
-        console.log(timer.time)
         $("#timer").text(displayTime);
+    },
+    stop: function () {
+        timer.time === 0,
+        clearInterval(intervalId);
+        var displayTime = timer.countdown(0);
+        console.log(timer.time);
+        $("#timer").text("Time left: " + displayTime);
     },
     countdown: function (t) {
 

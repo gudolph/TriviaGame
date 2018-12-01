@@ -1,0 +1,79 @@
+body {
+    background-image: url("../images/wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#title {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-color: rgba(184, 71, 71, 0.5);
+    width: 66%;
+    padding: 0;
+}
+h1 {
+    font-family: 'Alegreya SC';
+    font-size: 32px;
+    line-height: 1em;
+    color: black;
+    margin-bottom: 0px;
+}
+h2 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#introduction {
+    font-family: 'Junge';
+    font-weight: bold;
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+    background-color: rgba(51, 255, 200, 0.75);
+}
+hr {
+    width: 90%;
+}
+#martin {
+    width: 40%;
+    height: auto;
+}
+
+#info {
+    float: left;
+    width: 50%;
+    font-size: 14px;
+    line-height: 1em;
+    padding: 0px 10px 0px 10px;
+    margin-bottom: 0px;
+}
+
+#display {
+
+    width: 45%;
+    margin-left: 50%;
+
+}
+
+#timer {
+    float: left;
+    font-family: "Alegreya SC";
+    font-size: 30px;
+    background-color: rgba(167, 184, 71, 0.945);
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#total {
+    float: center;
+    font-family: "Alegreya SC";
+    font-size: 30px;
+    background-color: rgba(165, 71, 184, 0.5);
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+}
